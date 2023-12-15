@@ -1,7 +1,7 @@
 
-# Project Title
+# Rohani Kristen SMP Negeri 28 Jakarta
 
-A brief description of what this project does and who it's for
+Sebuah website yang dibuat untuk memudahkan siswa/i kristen dalam mengakses informasi.
 
 
 ## Tech Stack
