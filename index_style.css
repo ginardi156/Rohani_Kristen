@@ -1,3 +1,4 @@
+/* Navbar */
 *{
   padding: 0;
   margin: 0;
@@ -7,9 +8,10 @@
   list-style: none;
 }
 :root{
-    --bg-color: #222327;
+    --bg-color: #fff;
     --text-color: #fff;
-    --main-color: #29fd53;
+    --main-color: #eea509;
+    --navbar-color: #00a7ff;
 }
 body{
     min-height: 100vh;
@@ -25,18 +27,18 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: transparent;
-    padding: 28px 8%;
+    background: var(--navbar-color);
+    padding: 8px 8%;
     transition: all .50s ease;
+    
 }
 .logo{
   display: flex;
   align-items: center;
 }
-.logo i{
-  color: var(--main-color);
-  font-size: 28px;
-  margin-right: 3px;
+.logo img{
+  width: 75px;
+  height: 75px;
 }
 .logo span{
   color: var(--text-color);
@@ -75,6 +77,7 @@ header{
 .user{
   display: flex;
   align-items: center;
+  text-align: center;
 }
 .user i{
   color: var(--main-color);
@@ -100,5 +103,80 @@ header{
   .navbar a{
     padding: 5px 0;
     margin: 0px 8px;
+  }
+}
+
+/* Slider Carousel */
+.slides{
+  width: 100%;
+  padding-top: 4%;
+  position: relative;
+}
+
+.slides .slide{
+  display: none;
+}
+
+.slides .slide img{
+  width: 100%;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.slides .navigation{
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slides .navigation .prev, .slides .navigation .next{
+  cursor: pointer;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  background: rgba(0,0,0,0.2);
+  user-select: none;
+  transition: 0.6s ease;
+}
+
+.slides .navigation .prev:hover, .slides .navigation .next:hover{
+  background: rgba(0,0,0,1);
+}
+
+@keyframes fade {
+  from{opacity: 0.3}
+  to {opacity: 1}
+}
+
+@media (max-width: 992px){
+  .slides .navigation .prev, .slides .navigation .next{
+    font-size: 18px;
+    padding: 13px;
+  }
+}
+
+@media (max-width: 768px){
+  .slides .navigation .prev, .slides .navigation .next{
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px){
+  .slides .navigation .prev, .slides .navigation .next{
+    font-size: 12px;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 360px){
+  .slides .navigation .prev, .slides .navigation .next{
+    font-size: 11px;
+    padding: 6px;
   }
 }

@@ -1,7 +1,7 @@
 
 # Rohani Kristen SMP Negeri 28 Jakarta
 
-Sebuah website yang dibuat untuk memudahkan siswa/i kristen dalam mengakses informasi.
+Sebuah Website Sistem Informasi Yang Dibuat Untuk Memudahkan Penyampaian Informasi Kepada Siswa Secara Online
 
 
 ## Tech Stack
@@ -17,4 +17,5 @@ Sebuah website yang dibuat untuk memudahkan siswa/i kristen dalam mengakses info
 **16/12/2023**
 - Menambahkan Navbar Responsive
 
-
+**03/01/2023**
+- Menambahkan Carousel responsive
