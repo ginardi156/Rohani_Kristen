@@ -19,3 +19,9 @@ Sebuah Website Sistem Informasi Yang Dibuat Untuk Memudahkan Penyampaian Informa
 
 **03/01/2023**
 - Menambahkan Carousel responsive
+
+**10/01/2023**
+- Menambahkan Content Profile Sekolah
+
+**10/01/2023**
+- Menambahkan Content Profile Guru Rohani Kristen

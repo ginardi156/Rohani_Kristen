@@ -9,14 +9,16 @@
 }
 :root{
     --bg-color: #fff;
-    --text-color: #fff;
+    --text-navbar-color: #fff;
+    --text-color: #000;
     --main-color: #eea509;
     --navbar-color: #00a7ff;
+    --border-color: #00a7ff;
 }
 body{
     min-height: 100vh;
     background: var(--bg-color);
-    color: var(--text-color);
+    color: var(--text-navbar-color);
 }
 header{
     position: fixed;
@@ -41,7 +43,7 @@ header{
   height: 75px;
 }
 .logo span{
-  color: var(--text-color);
+  color: var(--text-navbar-color);
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -49,7 +51,7 @@ header{
   display: flex;
 }
 .navbar a{
-  color: var(--text-color);
+  color: var(--text-navbar-color);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 5px 0;
@@ -69,7 +71,7 @@ header{
 .main a{
   margin-right: 25px;
   margin-left: 10px;
-  color: var(--text-color);
+  color: var(--text-navbar-color);
   font-size: 1.0rem;
   font-weight: 500;
   transition: all .50s ease;
@@ -89,7 +91,7 @@ header{
 }
 #menu-icon{
   font-size: 35px;
-  color: var(--text-color);
+  color: var(--text-navbar-color);
   cursor: pointer;
   z-index: 10001;
   display: none;
@@ -109,12 +111,12 @@ header{
 /* Slider Carousel */
 .slides{
   width: 100%;
-  padding-top: 4%;
   position: relative;
 }
 
 .slides .slide{
   display: none;
+  padding-top: 90px;
 }
 
 .slides .slide img{
@@ -179,4 +181,62 @@ header{
     font-size: 11px;
     padding: 6px;
   }
+}
+
+/* Profil Sekolah */
+
+.content {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 25px;
+  line-height: 1,5;
+}
+
+.content h1 {
+  color: var(--text-color);
+  border-bottom: 8px solid var(--border-color);
+}
+
+.content p {
+  color: var(--text-color);
+  text-align: justify;
+  font-size: 14px;
+}
+
+/* Profil Rohani Kristen */
+
+.content-rohani-kristen {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  line-height: 1,5;
+}
+
+.content-rohani-kristen h1 {
+  color: var(--text-color);
+  border-bottom: 8px solid var(--border-color);
+}
+
+.content-rohani-kristen p {
+  color: var(--text-color);
+  text-align: justify;
+  font-size: 14px;
+}
+
+.content-rohani-kristen-data-guru {
+  color: var(--text-color);
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 25px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  line-height: 1,5;
+}
+
+.content-rohani-kristen-data-guru h2 {
+  border-bottom: 8px solid var(--border-color);
 }
