@@ -9,4 +9,10 @@
         return $result;
     }
 
+    function profile_editor(){
+        global $con;
+        $query = "SELECT * FROM deskripsi_profile";
+        $result = mysqli_query($con, $query);
+        return $result;
+    }
 ?>

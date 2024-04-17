@@ -19,7 +19,8 @@ $no = 1;
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>ADMIN ROHKRIS SMPN 28 JKT</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -28,7 +29,7 @@ $no = 1;
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="index.php"><img src="assets/img/logo.png" style="display: block; margin-left: 70px; margin-right: auto;" width="50px" height="50px"></a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -36,12 +37,7 @@ $no = 1;
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
+                <!-- Null Options -->
             </ul>
         </nav>
         <div id="layoutSidenav">
@@ -49,19 +45,19 @@ $no = 1;
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Carousel Editor
+                            <div class="sb-sidenav-menu-heading">PROFILE</div>
+                            <a class="nav-link" href="index.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-image"></i></div>
+                                Editor Carousel
                             </a>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                            <a class="nav-link" href="profiledesc.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-pen"></i></div>
+                                Profile Sekolah
                             </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                            <div class="sb-sidenav-menu-heading">Pengaturan</div>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tools"></i></div>
+                                Keluar Akun
                             </a>
                         </div>
                     </div>
@@ -74,9 +70,9 @@ $no = 1;
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">PROFILE</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Carousel Editor</li>
+                            <li class="breadcrumb-item active">Editor Carousel</li>
                         </ol>
                         <div class="row">
                         
@@ -84,7 +80,7 @@ $no = 1;
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Carousel Editor!
+                                Editor Carousel!
                             </div>
                             <div class="card-body">
                                 <table class="table align-middle">
@@ -119,10 +115,10 @@ $no = 1;
                                     } 
                                     ?> 
                                 </table>
+                                <div class="d-flex align-items-center justify-content-between mt-4 mb-1"> 
+                                    <a class="btn btn-primary" href="upload.php">Upload Gambar!</a>
+                                </div>
                             </div> 
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1"> 
-                            <a class="btn btn-primary" href="upload.php">Upload Gambar!</a>
                         </div>
                     </div>
                 </main>
