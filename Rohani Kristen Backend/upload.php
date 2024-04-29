@@ -34,7 +34,7 @@
                             </a>
                             <a class="nav-link" href="profiledesc.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-pen"></i></div>
-                                Profile Sekolah
+                                Profile Editor
                             </a>
                             <div class="sb-sidenav-menu-heading">Pengaturan</div>
                             <a class="nav-link" href="#">

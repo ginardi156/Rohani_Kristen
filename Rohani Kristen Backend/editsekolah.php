@@ -1,16 +1,12 @@
-<?php 
+<?php
+    require_once 'assets/settings/connection.php';
+    require_once 'assets/settings/function.php';
 
-/* require_once('assets/settings/connection.php'); 
-$query="SELECT * FROM image_upload_carousel ORDER BY id"; 
-$result=mysqli_query($con,$query); */
+    $id = $_GET['id'];
 
-require_once 'assets/settings/connection.php';
-require_once 'assets/settings/function.php';
+    $result = profile_editor();
+?>
 
-$result = display_data();
-$no = 1;
-
-?> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,8 +18,7 @@ $no = 1;
         <title>ADMIN ROHKRIS SMPN 28 JKT</title>
         <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="css/phpedit.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -36,16 +31,13 @@ $no = 1;
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             </form>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <!-- Null Options -->
-            </ul>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">PROFILE</div>
+                            <div class="sb-sidenav-menu-heading">Beranda</div>
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-image"></i></div>
                                 Editor Carousel
@@ -70,55 +62,51 @@ $no = 1;
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">PROFILE</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Editor Carousel</li>
+                        <h1 class="mt-4">Edit Text</h1>
+                        <ol class="breadcrumb mb-5">
+                            <li class="breadcrumb-item active">Profile Sekolah</li>
                         </ol>
-                        <div class="row">
-                        
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>PERHATIAN!</strong> mohon untuk tidak menggunakan tanda kutip satu seperti <strong>( 'TEXT' )</strong> pada awal kalimat. Karena dapat membuat sistem <strong>ERROR!!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Editor Carousel!
-                            </div>
-                            <div class="card-body">
-                                <table class="table align-middle">
-                                    <thead>
-                                        <tr>
-                                            <th><center>No</center></th>
-                                            <th><center>Position</center></th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php 
+                        <div class="row">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="form-floating mb-2">
+                            <!-- Input Hidden -->
+                            <center><input type="hidden" name="id" value="<?php echo $id ?>"></center>
+                            <!-- Input Tidak Hidden -->
+                            <?php 
                                     
                                     while($row=mysqli_fetch_assoc($result)) 
                                     { 
-                                        $id = $row['id'];
-                                        $file = $row['file'];
+                                        $desc = $row['deskripsi'];
                                     ?> 
-                                        <tr>
-                                            <td><center><?php echo $no++ ?></center></td>
-                                            <td><center><img src="assets/img/<?php echo $file ?>" width="400px" height="250px"></center></td>
-                                            <td>
-                                            <form action="delete.php" method="POST">
-                                                <input type="hidden" name="id" value="<?php echo $id ?>">
-                                                <input type="hidden" name="file" value="<?php echo $file ?>">
-                                                <button type="submit" name="delete" class="btn btn-danger">Hapus!</button>
-                                            </form>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <?php 
-                                    } 
-                                    ?> 
-                                </table>
-                                <div class="d-flex align-items-center justify-content-between mt-4 mb-1"> 
-                                    <a class="btn btn-primary" href="upload.php">Upload Gambar!</a>
-                                </div>
-                            </div> 
+                            <center>
+                            <div class="mb-3">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="deskripsi" rows="11"><?php echo $desc ?></textarea>
+                            </div>
+                            <?php 
+                                } 
+                            ?> 
+                            <center><input class="btn btn-primary" type="submit" name="proses" value="Ubah"></center>
+                        </Form>
+                        <?php
+                            $koneksi = mysqli_connect("localhost","root","","db_rohkris");
+
+                            if(isset($_POST['proses'])){
+
+                                $desc = $_POST['deskripsi'];
+
+                                mysqli_query($koneksi, "UPDATE deskripsi_sekolah SET deskripsi='$desc'");
+
+                                echo '<script type="text/javascript">'; 
+                                echo 'alert("File Berhasil Diubah!");';
+                                echo 'window.location.href = "profiledesc.php";';
+                                echo '</script>';
+                            }
+                        ?>
+
                         </div>
                     </div>
                 </main>
@@ -141,7 +129,7 @@ $no = 1;
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>

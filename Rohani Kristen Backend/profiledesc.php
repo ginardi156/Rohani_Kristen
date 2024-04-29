@@ -8,6 +8,7 @@ require_once 'assets/settings/connection.php';
 require_once 'assets/settings/function.php';
 
 $result = profile_editor();
+$result2 = profile_editor_rohkris();
 
 ?> 
 <!DOCTYPE html>
@@ -53,7 +54,7 @@ $result = profile_editor();
                             </a>
                             <a class="nav-link" href="profiledesc.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-pen"></i></div>
-                                Profile Sekolah
+                                Profile Editor
                             </a>
                             <div class="sb-sidenav-menu-heading">Pengaturan</div>
                             <a class="nav-link" href="#">
@@ -71,9 +72,9 @@ $result = profile_editor();
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">PROFILE</h1>
+                        <h1 class="mt-4">PROFILE EDITOR</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Editor Tulisan</li>
+                            <li class="breadcrumb-item active">Editor Teks!</li>
                         </ol>
                         <div class="row">
                         
@@ -81,7 +82,7 @@ $result = profile_editor();
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Editor Tulisan
+                                Profile Sekolah
                             </div>
                             <div class="card-body">
                                 <table class="table align-middle">
@@ -102,7 +103,46 @@ $result = profile_editor();
                                         <tr>
                                             <td style="text-align:justify; width:75%; "><?php echo $desc ?></td>
                                             <td>
-                                                <center><a href="editprofile.php?id=<?php echo $row['id']; ?>" class ="btn btn-primary">Ubah!</a></center>
+                                                <center><a href="editsekolah.php?id=<?php echo $row['id']; ?>" class ="btn btn-primary">Ubah!</a></center>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <?php 
+                                    } 
+                                    ?> 
+                                </table>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <div class="row">
+                        
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Profile Rohkris
+                            </div>
+                            <div class="card-body">
+                                <table class="table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th><center>Deskripsi</center></th>
+                                            <th><center>Action</center></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php 
+                                    
+                                    while($row=mysqli_fetch_assoc($result2)) 
+                                    { 
+                                        $id = $row['id'];
+                                        $desc = $row['deskripsi'];
+                                    ?> 
+                                        <tr>
+                                            <td style="text-align:justify; width:75%; "><?php echo $desc ?></td>
+                                            <td>
+                                                <center><a href="editrohkris.php?id=<?php echo $row['id']; ?>" class ="btn btn-primary">Ubah!</a></center>
                                             </td>
                                         </tr>
                                     </tbody>
